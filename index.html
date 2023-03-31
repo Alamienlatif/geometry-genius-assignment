@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry-genius-assignment</title>
+    <link
+     href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+<body>
+    <header>
+      <div class="navbar bg-base-100 bg-cyan-100 shadow-2xl lg:px-12">
+        <div class="navbar-start">
+          <div class="dropdown"></div>
+          <a class="btn btn-ghost normal-case">Interactive<br>Geometry Genius</a>
+        </div>
+        <div class="navbar-center hidden lg:flex"></div>
+        <div class="navbar-end">
+          <a class="btn">Blog</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="lg:px-12 flex flex-col md:flex-row lg:flex-row">
+        <div class="Drowing card w-[75%] mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card card compact w-full btn-outline bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/triangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Triangle</h2>
+              <p>Area (A) = 0.5 * b * h</p> 
+              <div class="flex gap-3">
+                <input id="btrianglequantity"type="text"placeholder="b"class="input input-bordered input-sm w-full max-w-xs"id="first-field"style="color: black"/><span>cm</span>
+                <input id="htrianglequantity" type="text" placeholder="h" class="input input-bordered input-sm w-full max-w-xs" id="fsecond-field" style="color: black"/><span>cm</span>
+          </div>
+            <button id="triangle-btn" class="btn btn-block btn-accent" id="first-card">
+              Calculate</button>
+            </div>
+          </div>
+          <div class="card card compact w-full btn-outline bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/rectangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Rectangle</h2>
+              <p>Area (A) = w * l</p>
+              <div class="flex gap-3">
+                <input id="wrectanglequantity" type="text" placeholder="w" class="input input-bordered input-sm w-full max-w-xs" id="" style="color: black"/><span>cm</span>
+                <input id="lrectanglequantity" type="text" placeholder="l" class="input input-bordered input-sm w-full max-w-xs" id="" style="color: black"/><span>cm</span>
+              </div> 
+              <button id="rectangle-btn" class="btn btn-block btn-accent" id="second-card">Calculate</button>
+            </div>
+          </div>
+          <div class="card card compact w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Parallelogram</h2>
+              <p>Area (A) = b * h</p>
+              <p>b = <span id="parallelogramquantityb">10</span>cm, h = <span id="parallelogramquantityh">12</span>cm</p>
+                <button id="parallelogram-btn" class="btn btn-block btn-accent" id="third-card">Calculate</button>
+            </div>
+          </div>          
+          <div class="card card compact w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/rhombus.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Rhombus</h2>
+              <p>Area (A) = 0.5 * d<sub>1</sub> * d<sub>2</subd></p>
+              <p>d<sub>1</sub> = <span id="rhombus1">16</span>cm, d<sub>2</sub> = <span id="rhombus2">8</span>cm</p>
+                <button id="rhombus-btn" class="btn btn-block btn-accent" id="forth-card">Calculate</button>
+            </div>
+          </div>
+          <div class="card card compact w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/pentagon.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Pentagon</h2>
+              <p>Area (A) = 0.5 * p * b</p>
+              <p>p = <span id="pentagonp">6</span>cm, b = <span id="pentagonb">10</span>cm</p>
+                <button id="pentagon-btn" class="btn btn-block btn-accent" id="fifth-card">Calculate</button>
+            </div>
+          </div>
+          <div class="card card compact w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/ellipse.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Ellipse</h2>
+              <p>Area(A) = 𝝿ab</p>
+              <p>a = <span id="ellipse1">10</span>cm, b = <span id="ellipse2">4</span>cm</p>
+                <button id="ellipse-btn" class="btn btn-block btn-accent" id="sixth-card">Calculate</button>              
+            </div>
+          </div>
+        </div>
+        <div class="text-3xl text-center font-bold underline mt-5 cart-details w-full md:w-[30%] lg:w[30%] mx-auto">
+            <h1 id="">Area Calculation</h1>
+            <div class="overflow-x-auto">
+              <table class="table w-full">
+                <head> 
+                <thead id="area">
+                  <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Centimitar</th>
+                    <th>Convert to M<sup>2</sup></th>
+                  </tr>
+                </thead>
+                <!-- <tbody>
+                    <tr>
+                    <th>1</th>
+                    <td>Cy Ganderton</td>
+                    <td>Quality Control Specialist</td>
+                    <td>Blue</td>
+                  </tr>
+                </tbody> -->
+                </head>
+              </table>
+            </div>
+        </div>
+      </section>
+    </main>
+    <script src="JS/index.js"></script>
+    <script src="JS/test.js"></script>
+</body>
+</html>
